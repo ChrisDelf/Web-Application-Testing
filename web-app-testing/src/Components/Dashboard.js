@@ -6,10 +6,10 @@ import Card from '@material-ui/core/Card';
 const Dashboard = ({ striker, ball, hit, foul }) => {
   return (
     <Card>
-      <Button onClick={striker}>Strike</Button>
-      <Button onClick={ball}>Ball</Button>
-      <Button onClick={foul}>Foul</Button>
-      <Button onClick={hit}>Hit</Button>
+      <Button className = 'gameButton' onClick={striker}>Strike</Button>
+      <Button className = 'gameButton' onClick={ball}>Ball</Button>
+      <Button className = 'gameButton' onClick={foul}>Foul</Button>
+      <Button className = 'gameButton' onClick={hit}>Hit</Button>
     </Card>
   );
 };

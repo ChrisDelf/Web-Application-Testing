@@ -10,7 +10,7 @@ const Display = props => {
   const [hit, setHit] = useState(0);
 
   const handleStriker = () => {
-    if (strike >= 3) {
+    if (strike >= 2) {
       setStrike(0);
       setBall(0);
     } else {
@@ -19,7 +19,7 @@ const Display = props => {
   };
 
   const handleBall = () => {
-    if (ball >= 4) {
+    if (ball >= 3) {
       setBall(0);
       setStrike(0);
     } else {
@@ -31,25 +31,30 @@ const Display = props => {
     setHit(hit + 1);
     setBall(0);
     setStrike(0);
-    setFoul(0)
+    setFoul(0);
   };
 
   const handleFoul = () => {
     if (strike === 0) {
       handleStriker();
-      setFoul(foul + 1)
+      setFoul(foul + 1);
     } else {
       setStrike(0);
       setBall(0);
+      setFoul(0);
     }
   };
 
   return (
     <Paper>
-      <Card>Strikes {strike}</Card>
-      <Card>ball {ball}</Card>
-      <Card>foul {foul}</Card>
-      <Card>hit {hit}</Card>
+      <div className="cardCon">
+
+        <Card className="tracker">Strikes {strike}</Card>
+        <Card className="tracker">ball {ball}</Card>
+        <Card className="tracker">foul {foul}</Card>
+        <Card className="tracker">hit {hit}</Card>
+      </div>
+
       <Dashboard
         key={strike.id}
         striker={handleStriker}
